@@ -1,0 +1,32 @@
+{% extends "airfryer_app/base.html" %}
+
+{% block body %}
+<div class="product-container flex">
+    {% for recipe in recipes %}
+        <div class="product shadow-lg w-1/4 rounded-lg m-10">
+            <div class="product-image">
+                <img src="{{ recipe.image }}" alt="">
+            </div>
+
+            <div class="p-5">
+                <div class="font-bold">
+                    {{ recipe.name }}
+                </div>
+                <div>
+                    {{ product.description }}
+                </div>
+                <div class="text-orange-700 font-bold text-orange">
+                    {{ recipe.description }}
+                </div>
+                <div class ="mt-5">
+                    <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                       href=" {% url 'recipe' recipe.id %}">View Details</a>
+                </div>
+            </div>
+        </div>
+
+
+    {% endfor %}
+</div>
+{% endblock %}
+
