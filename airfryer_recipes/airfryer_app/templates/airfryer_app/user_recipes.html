@@ -1,0 +1,38 @@
+{% extends "airfryer_app/base.html" %}
+
+{% block body %}
+  <h1 class="text-2xl m-10">Recipes by {{ user.username }}</h1>
+  <div class="container py-5">
+    <div class="row">
+      {% for recipe in recipes %}
+        <div class="col-md-6 offset-md-3">
+          <div class="bg-white shadow-md m-10 w-2/5 rounded px-8 pt-6 pb-8 mb-4">
+            <h2 class="text-2xl m-5">{{ recipe.name }}</h2>
+            <img src="{{ recipe.image.url }}" alt="Recipe Image" class="img-fluid m-5">
+            <h3 class="text-xl m-5">Description:</h3>
+            <p class="m-5">{{ recipe.description }}</p>
+            <h3 class="text-xl m-5">Time:</h3>
+            <p class="m-5">{{ recipe.time }}</p>
+            <h3 class="text-xl m-5">Ingredients:</h3>
+            <ul class="m-5">
+              <li>{{ recipe.ingredients1 }}</li>
+              <li>{{ recipe.ingredients2 }}</li>
+              <li>{{ recipe.ingredients3 }}</li>
+              <li>{{ recipe.ingredients4 }}</li>
+              <li>{{ recipe.ingredients5 }}</li>
+            </ul>
+            <h3 class="text-xl m-5">Instructions:</h3>
+            <ol class="m-5">
+              <li>{{ recipe.instructions1 }}</li>
+              <li>{{ recipe.instructions2 }}</li>
+              <li>{{ recipe.instructions3 }}</li>
+              <li>{{ recipe.instructions4 }}</li>
+              <li>{{ recipe.instructions5 }}</li>
+            </ol>
+            <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-5">Edit</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

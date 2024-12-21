@@ -1,0 +1,74 @@
+
+
+{% extends "airfryer_app/base.html" %}
+
+{% block body %}
+  <h1 class="text-2xl m-10">Edit Recipe</h1>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form method="post" class="bg-white shadow-md m-10 w-2/5 rounded px-8 pt-6 pb-8 mb-4">
+          {% csrf_token %}
+          <div class="form-group mb-4">
+            <label for="id_name">Name:</label>
+            {{ form.name }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_description">Description:</label>
+            {{ form.description }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_time">Time:</label>
+            {{ form.time }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_ingredients1">Ingredients 1:</label>
+            {{ form.ingredients1 }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_ingredients2">Ingredients 2:</label>
+            {{ form.ingredients2 }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_ingredients3">Ingredients 3:</label>
+            {{ form.ingredients3 }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_ingredients4">Ingredients 4:</label>
+            {{ form.ingredients4 }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_ingredients5">Ingredients 5:</label>
+            {{ form.ingredients5 }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_instructions1">Instructions 1:</label>
+            {{ form.instructions1 }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_instructions2">Instructions 2:</label>
+            {{ form.instructions2 }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_instructions3">Instructions 3:</label>
+            {{ form.instructions3 }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_instructions4">Instructions 4:</label>
+            {{ form.instructions4 }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_instructions5">Instructions 5:</label>
+            {{ form.instructions5 }}
+          </div>
+          <div class="form-group mb-4">
+            <label for="id_image">Image:</label>
+            {{ form.image }}
+          </div>
+          <button type="submit" class="text-white bg-green-500 px-5 py-2 my-5">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

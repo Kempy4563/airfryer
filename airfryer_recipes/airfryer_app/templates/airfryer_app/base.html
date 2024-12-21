@@ -16,7 +16,9 @@
         </a>
          <div class="flex items-center">
              {% if user.is_authenticated %}
-             <a href="" class="mr-6 text-sm font-medium text-grey-500">Profile</a>
+             <a href="{% url 'user_recipes' user.username %}" class="mr-6 text-sm font-medium text-grey-500">Profile</a>
+             <a href="{% url 'add_recipe' %}" class="mr-6 text-sm font-medium text-grey-500">Add Recipe</a>
+
              <form action="{% url 'logout' %}" method="post">
              {% csrf_token %}
              <button type="submit" class="mr-6 text-sm font-medium text-grey-500">Logout</button>
