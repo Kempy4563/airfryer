@@ -15,52 +15,50 @@
                     {{ recipe.description }}
                 </div>
                 <div class ="mt-5">
-                    <p>Ingredients:</p>
+                    <p class="font-bold">Ingredients:</p>
                 </div>
-
-
                 {% if recipe.ingredients1 %}
-                  <p>{{ recipe.ingredients1 }}</p>
+                  <p>1.{{ recipe.ingredients1 }}</p>
                 {% endif %}
 
                 {% if recipe.ingredients2 %}
-                  <p>{{ recipe.ingredients2 }}</p>
+                  <p>2.{{ recipe.ingredients2 }}</p>
                 {% endif %}
 
                 {% if recipe.ingredients3 %}
-                  <p>{{ recipe.ingredients3 }}</p>
+                  <p>3.{{ recipe.ingredients3 }}</p>
                 {% endif %}
 
                 {% if recipe.ingredients4 %}
-                  <p>{{ recipe.ingredients4 }}</p>
+                  <p>4.{{ recipe.ingredients4 }}</p>
                 {% endif %}
 
                 {% if recipe.ingredients5 %}
-                  <p>{{ recipe.ingredients5 }}</p>
+                  <p>5.{{ recipe.ingredients5 }}</p>
                 {% endif %}
 
               <div class ="mt-5">
-                    <p>Instructions:</p>
+                    <p class="font-bold">Instructions:</p>
                 </div>
 
                 {% if recipe.instructions1 %}
-                  <p>{{ recipe.instructions1 }}</p>
+                   <p>1.{{ recipe.instructions1 }}</p>
                 {% endif %}
 
                 {% if recipe.instructions2 %}
-                  <p>{{ recipe.instructions2 }}</p>
+                  <p>2.{{ recipe.instructions2 }}</p>
                 {% endif %}
 
                 {% if recipe.instructions3 %}
-                  <p>{{ recipe.instructions3 }}</p>
+                  <p>3.{{ recipe.instructions3 }}</p>
                 {% endif %}
 
                 {% if recipe.instructions4 %}
-                  <p>{{ recipe.instructions4 }}</p>
+                  <p>4.{{ recipe.instructions4 }}</p>
                 {% endif %}
 
                 {% if recipe.instructions5 %}
-                  <p>{{ recipe.instructions5 }}</p>
+                  <p>5.{{ recipe.instructions5 }}</p>
                 {% endif %}
 
                 {% if user.is_authenticated and user == recipe.user %}
