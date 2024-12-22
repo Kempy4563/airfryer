@@ -20,7 +20,7 @@
                 class="mr-6 text-sm font-medium text-grey-500">Welcome, {{ user.username }}</a>
              <a href="{% url 'user_recipes' user.username %}" class="mr-6 text-sm font-medium text-grey-500">Profile</a>
             {% if request.path != '/saved_recipes/' %}
-                <a href="{% url 'saved_recipes' %}" class="mr-6 text-sm font-medium text-grey-500">Saved Recipes</a>
+                <a href="{% url 'saved_recipes' %}" class="mr-6 text-sm font-medium text-grey-500">Favourites</a>
             {% endif %}
              <a href="{% url 'add_recipe' %}" class="mr-6 text-sm font-medium text-grey-500">Add Recipe</a>
 
