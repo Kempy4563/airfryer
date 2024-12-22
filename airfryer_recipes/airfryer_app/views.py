@@ -95,5 +95,13 @@ def delete_saved_recipe(request, id):
     saved_recipe.delete()
     return redirect("saved_recipes")
 
+def search_recipes(request):
+    if request.method == 'GET':
+        query = request.GET.get('q')
+        print("Query:", query)
+        recipes = Recipe.objects.filter(name__icontains=query)
+        print("Recipes:", recipes)
+        return render(request, 'airfryer_app/search_results.html', {'recipes': recipes})
+
 
 
