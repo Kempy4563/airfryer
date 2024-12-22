@@ -61,11 +61,35 @@
                   <p>5.{{ recipe.instructions5 }}</p>
                 {% endif %}
 
-                {% if user.is_authenticated and user == recipe.user %}
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                          onclick="window.location.href='{% url 'edit_recipe' recipe.pk %}'">Edit Recipe</button>
+                <div class="text-orange-700 font-bold text-orange">
+                    {{ recipe.time }} minutes
+                </div>
+
+
+             {% if user.is_authenticated %}
+                 {% if is_saved %}
+             <br>
+                    <p>This recipe is one of your saved recipes</p>
+                {% else %}
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                            onclick="window.location.href='{% url 'save_recipe' recipe.id %}'">Save Recipe</button>
                 {% endif %}
+            {% endif %}
 
+            {% if user.is_authenticated and user == recipe.user %}
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        onclick="window.location.href='{% url 'edit_recipe' recipe.pk %}'">Edit Recipe</button>
+            {% endif %}
 
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
+    </div>
+</div>
+
 {% endblock %}

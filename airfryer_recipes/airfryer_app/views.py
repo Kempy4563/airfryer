@@ -1,9 +1,13 @@
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Recipe
 from .forms import RecipeForm
+from .models import SavedRecipe
+
+
 
 
 
@@ -14,6 +18,11 @@ def index(request):
 
 def detail(request, id):
     recipe = Recipe.objects.get(pk=id)
+    is_saved = False
+
+    if request.user.is_authenticated:
+        is_saved = SavedRecipe.objects.filter(user=request.user, recipe=recipe).exists()
+
     if request.method == 'POST':
         if request.user == recipe.user:
             form = RecipeForm(request.POST, instance=recipe)
@@ -24,7 +33,7 @@ def detail(request, id):
             return redirect('detail', id=id)
     else:
         form = RecipeForm(instance=recipe)
-    return render(request, "airfryer_app/detail.html", {"recipe": recipe, "form": form})
+    return render(request, "airfryer_app/detail.html", {"recipe": recipe, "form": form, "is_saved": is_saved})
 
 @login_required
 def edit_recipe(request, pk):
@@ -59,4 +68,21 @@ def add_recipe(request):
     else:
         form = RecipeForm()
     return render(request, 'airfryer_app/add_recipe.html', {'form': form})
+
+@login_required
+def save_recipe(request, recipe_id):
+    recipe = Recipe.objects.get(id=recipe_id)
+    saved_recipe, created = SavedRecipe.objects.get_or_create(user=request.user, recipe=recipe)
+
+    return redirect('recipe', id=recipe_id)
+
+def saved_recipes(request):
+    user_saved_recipes = SavedRecipe.objects.filter(user=request.user)
+    return render(request, 'airfryer_app/saved_user_recipes.html', {'user_saved_recipes': user_saved_recipes})
+
+def delete_saved_recipe(request, id):
+    saved_recipe = SavedRecipe.objects.get(id=id)
+    saved_recipe.delete()
+    return redirect("saved_recipes")
+
 

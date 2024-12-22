@@ -57,7 +57,7 @@ ROOT_URLCONF = "airfryer_recipes.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / 'airfryer_app/templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
