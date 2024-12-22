@@ -83,13 +83,13 @@
 
              <br>
              <br>
-             <h2>User Comments:</h2>
+             <span class="font-bold" >Comments:</span>
                 <ul>
                         {% for comment in comments %}
                             <li>
                                 <br>
                                 <span class="italic">"{{ comment.comment }}" </span>
-                                    <br>Comment submitted by {{ comment.user.username }}
+                                    <br>submitted by {{ comment.user.username }}
                                     <br>{{ comment.created_at }}
                                 <br>
                             </li>
