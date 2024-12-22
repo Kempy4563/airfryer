@@ -81,14 +81,42 @@
                         onclick="window.location.href='{% url 'edit_recipe' recipe.pk %}'">Edit Recipe</button>
             {% endif %}
 
-            {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                    {% endfor %}
+             <br>
+             <br>
+             <h2>User Comments:</h2>
+                <ul>
+                        {% for comment in comments %}
+                            <li>
+                                <br>
+                                <span class="italic">"{{ comment.comment }}" </span>
+                                    <br>Comment submitted by {{ comment.user.username }}
+                                    <br>{{ comment.created_at }}
+                                <br>
+                            </li>
+                        {% empty %}
+                            <p>No comments yet.</p>
+                        {% endfor %}
                 </ul>
-            {% endif %}
-        </div>
+
+                    <form method="post" class="mb-4">
+                        {% csrf_token %}
+                        <div class="mb-4">
+
+                            <br>
+                            <label for="comment" class="block text-sm font-medium text-gray-700">Add Comment:</label>
+                            <textarea id="comment" name="comment" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                    </form>
+
+                     {% if messages %}
+                        <ul class="messages mb-4">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }} mb-4"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
     </div>
 </div>
 

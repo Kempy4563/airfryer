@@ -1,5 +1,6 @@
 from django import forms
 from .models import Recipe
+from .models import Comment
 
 class RecipeForm(forms.ModelForm):
     class Meta:
@@ -20,3 +21,10 @@ class RecipeForm(forms.ModelForm):
             'instructions4': forms.Textarea(attrs={'class': 'border border-gray-300 rounded py-1 px-2 w-64 h-32'}),
             'instructions5': forms.Textarea(attrs={'class': 'border border-gray-300 rounded py-1 px-2 w-64 h-32'}),
         }
+
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('comment',)

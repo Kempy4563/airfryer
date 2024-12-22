@@ -5,9 +5,6 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
-
-
-
 class Recipe(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, default=1)
@@ -37,5 +34,9 @@ class SavedRecipe(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)
 
-
+class Comment(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
