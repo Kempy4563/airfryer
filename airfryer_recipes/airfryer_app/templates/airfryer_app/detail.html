@@ -9,10 +9,13 @@
             <img src="{{ recipe.image.url }}" alt="" class="product-image">
         </div>
  <div class="flex justify-content-between">
-    {% if not is_saved %}
+
+     {% if user.is_authenticated %}
+        {% if not is_saved %}
              <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                             onclick="window.location.href='{% url 'save_recipe' recipe.pk %}'">Save Recipe</button>
-     {% endif %}
+        {% endif %}
+    {% endif %}
     {% if user.is_authenticated and user == recipe.user %}
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto"
                 onclick="window.location.href='{% url 'edit_recipe' recipe.pk %}'">Edit Recipe</button>
@@ -88,15 +91,15 @@
 
 
              <br>
-             <br>
              <span class="font-bold" >Comments:</span>
                 <ul>
                         {% for comment in comments %}
                             <li>
-                                <br>
+
                                 <span class="italic">"{{ comment.comment }}" </span>
                                     <br>submitted by {{ comment.user.username }}
                                     <br>{{ comment.created_at }}
+                                <br>
                                 <br>
                             </li>
                         {% empty %}
