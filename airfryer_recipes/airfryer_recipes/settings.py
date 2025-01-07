@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-n+$j4w&a(q30_j4ht$)o3lw-y#36-5264oblv%0z8)=lh(yar$"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -51,6 +52,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = "airfryer_recipes.urls"
@@ -83,8 +86,10 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+# External Database connection. Use when running locally
+#DATABASES["default"] = dj_database_url.parse("postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a.frankfurt-postgres.render.com/my_postgresql_render")
 
-DATABASES["default"] = dj_database_url.parse("postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a.frankfurt-postgres.render.com/my_postgresql_render")
+DATABASES["default"] = dj_database_url.parse("postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a/my_postgresql_render")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -121,6 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
