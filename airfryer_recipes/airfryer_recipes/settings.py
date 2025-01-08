@@ -127,7 +127,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'airfryer_recipes', 'static_files')
 
 MEDIA_URL = '/media/images/'
-MEDIA_ROOT = '/var/data/media/images/'
+MEDIA_ROOT = '/var/data/media'
 
 
 # Default primary key field type
