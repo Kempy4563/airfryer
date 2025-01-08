@@ -2,11 +2,14 @@
 {% extends "airfryer_app/base.html" %}
 
 {% block body %}
+
+
+
   <div class="product-container flex flex-wrap justify-content-center">
     {% for recipe in recipes %}
       <div class="product shadow-lg w-1/5 rounded-lg m-10">
         <div class="product-image">
-        <img src="{{ recipe.image }}" alt="">
+        <img src="{% media recipe.image %}" alt="">
         </div>
 
         <div class="p-5">
