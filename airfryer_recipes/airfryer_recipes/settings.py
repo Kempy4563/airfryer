@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,6 +52,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = "airfryer_recipes.urls"
@@ -74,7 +77,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "airfryer_recipes.wsgi.application"
 
 
-# Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
@@ -84,7 +86,11 @@ DATABASES = {
     }
 }
 
+# external postregsql on render
 DATABASES["default"] = dj_database_url.parse("postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a.frankfurt-postgres.render.com/my_postgresql_render")
+
+# internal postgresql on render
+#DATABASES["default"] = ("postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a/my_postgresql_render")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -120,7 +126,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
