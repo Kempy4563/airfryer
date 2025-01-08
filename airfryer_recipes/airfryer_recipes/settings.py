@@ -126,8 +126,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'airfryer_recipes', 'static_files')
 
-MEDIA_URL = '/media/images/'
-MEDIA_ROOT = '/var/data/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/var/data/media/'
 
 
 # Default primary key field type
