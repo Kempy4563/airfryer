@@ -24,7 +24,7 @@ class Recipe(models.Model):
     instructions5 = models.CharField(max_length=200, null=True, blank=True)
 
     #image = models.ImageField(upload_to='images/', default='default_image.jpg')
-    image = models.ImageField(upload_to='/mnt/data/media/images/', default='/mnt/data/media/default_image.jpg')
+    image = models.ImageField(upload_to='media/images/', default='media/default_image.jpg')
 
     def __str__(self):
         return self.name
