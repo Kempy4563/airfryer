@@ -125,7 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'airfryer_recipes', 'static_files')
 
-MEDIA_URL = '/'
+MEDIA_URL = '/var/data/'
 MEDIA_ROOT = '/var/data/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
