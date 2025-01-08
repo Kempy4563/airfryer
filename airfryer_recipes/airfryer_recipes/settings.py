@@ -127,10 +127,11 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'airfryer_recipes', 'static_files')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/data/'
+MEDIA_ROOT = '/var/data/media/'
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
