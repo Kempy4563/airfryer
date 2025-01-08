@@ -8,6 +8,7 @@ from .forms import RecipeForm, CommentForm
 from .models import SavedRecipe
 
 
+
 def index(request):
     recipes = Recipe.objects.all()
     return render(request, "airfryer_app/index.html", {"recipes": recipes})
