@@ -17,7 +17,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -28,7 +27,6 @@ SECRET_KEY = "django-insecure-n+$j4w&a(q30_j4ht$)o3lw-y#36-5264oblv%0z8)=lh(yar$
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -76,7 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "airfryer_recipes.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
@@ -87,10 +84,11 @@ DATABASES = {
     }
 }
 # External Database connection. Use when running locally
-#DATABASES["default"] = dj_database_url.parse("postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a.frankfurt-postgres.render.com/my_postgresql_render")
+# DATABASES["default"] = dj_database_url.parse("postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a.frankfurt-postgres.render.com/my_postgresql_render")
 
 # internal database
-DATABASES["default"] = dj_database_url.parse("postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a/my_postgresql_render")
+DATABASES["default"] = dj_database_url.parse(
+    "postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a/my_postgresql_render")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -110,7 +108,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -122,23 +119,18 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'airfryer_recipes', 'static_files')
 
-MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # disk mount on render
-MEDIA_ROOT = '/var/data/media/images'
-
+MEDIA_ROOT = '/var/data'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
