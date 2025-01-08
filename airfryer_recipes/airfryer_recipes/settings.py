@@ -132,7 +132,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'airfryer_recipes', 'static_files')
 MEDIA_URL = '/media/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # disk mount on render
-MEDIA_ROOT = '/var/data/media'
+MEDIA_ROOT = '/var/data/media/images'
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
