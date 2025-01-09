@@ -68,6 +68,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "django.template.context_processors.media",
+                "django.core.context_processors.media",
             ],
         },
     },
@@ -128,8 +129,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-MEDIA_URL = '/'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = '/var/data/media'
+
 
 
 # Default primary key field type
