@@ -129,7 +129,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/data/media/'
+MEDIA_ROOT = '/var/data/media'
 
 
 # Default primary key field type
