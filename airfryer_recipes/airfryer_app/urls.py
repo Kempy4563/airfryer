@@ -16,4 +16,5 @@ urlpatterns = [
     path('search/', views.search_recipes, name='search_recipes'),
 
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
