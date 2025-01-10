@@ -3,10 +3,10 @@
 {% block body %}
 
 
-<div class="container py-5 ml-5">
+  <div class="product-container main-content" >
     <div class="product shadow-lg w-1/3 rounded-lg m-10">
         <div class="product-image pb-4">
-            <img src="{{ recipe.image.url }}" alt="" class="product-image">
+            <img src="{{ recipe.image.url }}" alt="" class="recipe-image">
         </div>
  <div class="flex justify-content-between">
 
@@ -22,7 +22,6 @@
     {% endif %}
 </div>
 
-        </div>
     </div>
 
 
@@ -121,12 +120,18 @@
                      {% if messages %}
                         <ul class="messages mb-4">
                             {% for message in messages %}
-                                <li{% if message.tags %} class="{{ message.tags }} mb-4"{% endif %}>{{ message }}</li>
+                                <li {% if message.tags %} class="{{ message.tags }} mb-4"{% endif %}>{{ message }}
+                            </li>
                             {% endfor %}
                         </ul>
                     {% endif %}
                 </div>
     </>
-</div>
+
+<style>
+    .product-container img {
+  width: 400px; /* set the width of the images to 200px */
+  height: 300px; /* maintain the aspect ratio of the images */
+}
 
 {% endblock %}
