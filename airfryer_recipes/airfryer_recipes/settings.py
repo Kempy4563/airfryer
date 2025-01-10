@@ -83,19 +83,20 @@ WSGI_APPLICATION = "airfryer_recipes.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-#DATABASES = {
-#    "default": {
-#        "ENGINE": "django.db.backends.sqlite3",
-#        "NAME": BASE_DIR / "db.sqlite3",
-#    }
-#}
-
-#DATABASE_URL = os.environ.get('DATABASE_URL')
-
+'''
+# Development
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+'''
 # production
 DATABASES = {
     'default': dj_database_url.config()
 }
+
 
 # Password validations
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -126,14 +127,16 @@ USE_I18N = True
 
 USE_TZ = True
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "static/"
+
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
+# Production uncomment
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/var/data'
 
@@ -143,4 +146,3 @@ MEDIA_ROOT = '/var/data'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
