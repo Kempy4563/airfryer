@@ -5,12 +5,12 @@
 
 
 
-  <div class="product-container main-content flex flex-wrap justify-content-center">
+  <div class="product-container main-content flex flex-wrap justify-content-center" >
 
     {% for recipe in recipes %}
       <div class="product shadow-lg w-1/5 rounded-lg m-10">
         <div class="product-image">
-          <img src="{{ recipe.image.url }}" alt="">
+          <img src="{{ recipe.image.url }}" alt="" class="recipe-image">
         </div>
 
         <div class="p-5">
@@ -34,4 +34,13 @@
       {% endif %}
     {% endfor %}
   </div>
+
+  <style>
+    .recipe-image {
+      width: 300px; /* Set the width to a fixed value */
+      height: 200px; /* Set the height to a fixed value */
+      object-fit: cover; /* Scale the image to fit the container */
+    }
+  </style>
+
 {% endblock %}
