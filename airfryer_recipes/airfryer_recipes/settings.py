@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import dj_database_url
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-n+$j4w&a(q30_j4ht$)o3lw-y#36-5264oblv%0z8)=lh(yar$"
+SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -84,12 +89,7 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-# External Database connection. Use when running locally
-# DATABASES["default"] = dj_database_url.parse("postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a.frankfurt-postgres.render.com/my_postgresql_render")
 
-# internal database
-DATABASES["default"] = dj_database_url.parse(
-    "postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a/my_postgresql_render")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
