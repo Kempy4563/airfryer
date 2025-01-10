@@ -1,0 +1,12 @@
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  body {
+    background: #f6f1f1;
+    width: 100%;
+  }
+}
+
+.recipe-image {
+    width: 90%; /* Set the width to 100% of the parent container */
+    height: 50%; /* Set the height to a fixed value */
+    object-fit: cover; /* Scale the image to fit the container */
+}
