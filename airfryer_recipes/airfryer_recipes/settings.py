@@ -92,7 +92,9 @@ WSGI_APPLICATION = "airfryer_recipes.wsgi.application"
 
 #DATABASE_URL = os.environ.get('DATABASE_URL')
 
-
+DATABASES = {
+    'default': dj_database_url.config()
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
