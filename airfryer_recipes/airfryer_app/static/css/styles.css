@@ -6,7 +6,7 @@
 }
 
 .recipe-image {
-    width: 90%; /* Set the width to 100% of the parent container */
-    height: 50%; /* Set the height to a fixed value */
+    width: 330px; /* Set the width to 100% of the parent container */
+    height: 200px; /* Set the height to a fixed value */
     object-fit: cover; /* Scale the image to fit the container */
 }
