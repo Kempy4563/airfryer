@@ -45,3 +45,11 @@
 
 }
 
+footer .flex {
+  justify-content: center;
+}
+
+.edit-form {
+  padding-bottom: 100px;
+
+}
