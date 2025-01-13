@@ -16,6 +16,8 @@
                 <a href="{% url 'index' %}" class="flex items-center">
                <img class ="w-10 h-10" src="https://cdn-icons-png.flaticon.com/128/13602/13602445.png">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap">Air Fryer Recipes</span>
+                          <span class="text-sm ml-2">Lee Kempson</span>
+
             </a>
              <form action="{% url 'search_recipes' %}" method="get">
                 <input type="search" name="q" placeholder="Search recipes" class="w-64 pl-4 py-1 pr-10 text-sm text-gray-700 border border-black">
@@ -44,6 +46,19 @@
      </nav>
 
 
+<footer class="footer">
+
+    <div class="flex items-center justify-center">
+      <a href="mailto:leekempson@hotmail.com" class="nav__link footer-link">Contact</a>
+      <span class="mx-2">|</span>
+      <a href="https://github.com/Kempy4563" target="_blank" class="nav__link footer-link"><i class="fab fa-github"></i> GitHub</a>
+      <span class="mx-2">|</span>
+      <a href="https://www.linkedin.com/in/lee-kempson-8b865b294/" target="_blank" class="nav__link footer-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <span class="mx-2">|</span>
+      <a href="https://portfolio-lee-ryan-kempson.onrender.com/" target="_blank" class="nav__link footer-link"><i class="fab fa-portfolio"></i> Portfolio</a>
+    </div>
+  </div>
+</footer>
 
     {% block body %}
 

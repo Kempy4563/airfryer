@@ -10,3 +10,35 @@
     height: 200px; /* Set the height to a fixed value */
     object-fit: cover; /* Scale the image to fit the container */
 }
+
+.main-content {
+  margin-bottom: 100px; /* adjust this value to match the height of your footer */
+    padding-bottom: 100px; /* adjust this value to match the height of your footer */
+
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .footer-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #0f0; /* green */
+    text-decoration-thickness: 3px; /* adjust this value to make the underline thicker */
+
+}
