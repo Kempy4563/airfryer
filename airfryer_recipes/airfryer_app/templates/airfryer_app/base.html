@@ -7,6 +7,8 @@
         <title>Air-Fryer Recipes by Lee Kempson</title>
         <script src="https://cdn.tailwindcss.com"></script>
           <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
 
     </head>
     <body>
@@ -49,16 +51,29 @@
 <footer class="footer">
 
     <div class="flex items-center justify-center">
-      <a href="mailto:leekempson@hotmail.com" class="nav__link footer-link">Contact</a>
+      <a href="mailto:leekempson@hotmail.com" class="nav__link footer-link">
+        <i class="fas fa-envelope"></i>
+        Contact
+      </a>
       <span class="mx-2">|</span>
-      <a href="https://github.com/Kempy4563" target="_blank" class="nav__link footer-link"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://github.com/Kempy4563" target="_blank" class="nav__link footer-link">
+        <i class="fab fa-github"></i>
+        GitHub
+      </a>
       <span class="mx-2">|</span>
-      <a href="https://www.linkedin.com/in/lee-kempson-8b865b294/" target="_blank" class="nav__link footer-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <span class="mx-2">|</span>
-      <a href="https://portfolio-lee-ryan-kempson.onrender.com/" target="_blank" class="nav__link footer-link"><i class="fab fa-portfolio"></i> Portfolio</a>
+      <a href="https://www.linkedin.com/in/lee-kempson-8b865b294/" target="_blank" class="nav__link footer-link">
+        <i class="fab fa-linkedin"></i>
+        LinkedIn
+      </a>
+      <span class="mx-2">|</span>
+      <a href="https://portfolio-lee-ryan-kempson.onrender.com/" target="_blank" class="nav__link footer-link">
+        <i class="fas fa-portfolio"></i>
+        Portfolio
+      </a>
     </div>
   </div>
 </footer>
+
 
     {% block body %}
 

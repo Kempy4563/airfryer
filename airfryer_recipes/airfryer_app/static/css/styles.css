@@ -20,13 +20,15 @@
 .footer {
   position: fixed;
   bottom: 0;
+  height: 100px;
   width: 100%;
   background-color: #fff;
   padding: 20px;
   border-top: 1px solid #ddd;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  .footer-link {
+.footer-link {
   text-decoration: none;
   color: #333;
 }
@@ -42,3 +44,4 @@
   text-decoration-thickness: 3px; /* adjust this value to make the underline thicker */
 
 }
+
