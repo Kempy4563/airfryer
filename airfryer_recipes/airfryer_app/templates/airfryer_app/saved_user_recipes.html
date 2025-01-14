@@ -5,6 +5,8 @@
   <div class="product-container flex flex-wrap justify-content-center">
 
         {% for recipe in user_saved_recipes %}
+        <div class="product-container main-content flex flex-wrap" >
+
             <div class="product shadow-lg w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 rounded-lg m-10">
                 <img src="{{ recipe.recipe.image.url }}" alt="Recipe Image" class="recipe-image">
 
@@ -21,6 +23,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         {% empty %}
             <p class="text-gray-500">No saved recipes found.</p>
         {% endfor %}
