@@ -23,7 +23,7 @@
   height: 100px;
   width: 100%;
   background-color: #fff;
-  padding: 20px;
+  padding: 35px;
   border-top: 1px solid #ddd;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -43,6 +43,10 @@
   text-decoration-color: #34C759; /* green-500 */
   text-decoration-thickness: 3px; /* adjust this value to make the underline thicker */
 
+}
+
+footer p {
+  text-align: center;
 }
 
 footer .flex {
