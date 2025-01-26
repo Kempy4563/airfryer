@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
+# comment
+
 class Recipe(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, default=1)
