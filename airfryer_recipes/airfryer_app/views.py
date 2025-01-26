@@ -16,8 +16,14 @@ def index(request):
 
 def detail(request, id):
     recipe = Recipe.objects.get(pk=id)
+    print(recipe.instructions1)
+    print(recipe.instructions2)
+    print(recipe.instructions3)
+    print(recipe.instructions4)
+    print(recipe.instructions5)
+    print(recipe.instructions6)
+    print(recipe.instructions7)
     is_saved = False
-
     if request.user.is_authenticated:
         is_saved = SavedRecipe.objects.filter(user=request.user, recipe=recipe).exists()
 
@@ -68,6 +74,7 @@ def user_recipes(request, username):
 def add_recipe(request):
     if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES)
+
         if form.is_valid():
             recipe = form.save(commit=False)
             recipe.user = request.user
