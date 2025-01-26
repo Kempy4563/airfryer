@@ -16,16 +16,12 @@ class Recipe(models.Model):
     ingredients3 = models.CharField(max_length=200, null=True, blank=True)
     ingredients4 = models.CharField(max_length=200, null=True, blank=True)
     ingredients5 = models.CharField(max_length=200, null=True, blank=True)
-    ingredients6 = models.CharField(max_length=200, null=True, blank=True)
-    ingredients7 = models.CharField(max_length=200, null=True, blank=True)
 
     instructions1 = models.CharField(max_length=400, null=True, blank=True)
     instructions2 = models.CharField(max_length=400, null=True, blank=True)
     instructions3 = models.CharField(max_length=400, null=True, blank=True)
     instructions4 = models.CharField(max_length=400, null=True, blank=True)
     instructions5 = models.CharField(max_length=400, null=True, blank=True)
-    instructions6 = models.CharField(max_length=400, null=True, blank=True)
-    instructions7 = models.CharField(max_length=400, null=True, blank=True)
 
     # production
     image = models.ImageField(default='default_image.jpg')
