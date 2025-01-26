@@ -98,7 +98,8 @@ DATABASES = {
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 # connect to the postgresql database from localhost
-#DATABASES["default"] = dj_database_url.parse("postgresql://my_postgresql_render_user:w8E3Hu3BbLPUTo2hfnd6LAodoL9fWhsS@dpg-ctuffmrqf0us73f3kf2g-a.frankfurt-postgres.render.com/my_postgresql_render")
+# !!!!! get the connection string from OneNotes for Airfryer !!!!!
+#DATABASES["default"] = dj_database_url.parse("postgresql://XXXXXXXXXXXXXXXXXXX")
 
 
 
@@ -141,7 +142,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/var/data'
-
 
 
 # Default primary key field type
