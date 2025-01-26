@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
-# comment
 
 class Recipe(models.Model):
 
