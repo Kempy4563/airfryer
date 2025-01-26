@@ -90,6 +90,10 @@ WSGI_APPLICATION = "airfryer_recipes.wsgi.application"
 #    }
 #}
 
+DATABASES = {
+    "default": dj_database_url.config()
+}
+
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 
